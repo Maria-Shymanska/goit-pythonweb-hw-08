@@ -11,15 +11,12 @@ class ContactBase(BaseModel):
     birth_date: datetime
     additional: str = Field(max_length=250)
 
+
+
 class ContactResponse(ContactBase):
     id: int
-    first_name: str
-    last_name: str
-    email: str
-    phone: str
-    birth_date: datetime
-    additional: str
-    created_at: datetime | None
-    updated_at: Optional[datetime] | None
+    created_at: datetime | None = None
+    updated_at: datetime | None = None
 
     model_config = ConfigDict(from_attributes=True)
+
